@@ -1,0 +1,267 @@
+.diensten {
+  position: relative;
+  background: #0a0a0a;
+  color: #f4f2ee;
+  padding: clamp(80px, 10vw, 140px) 0;
+  margin-top: -80px;
+  padding-top: calc(clamp(80px, 10vw, 140px) + 80px);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.diensten-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(28px, 4vw, 64px);
+}
+
+/* ── Header ── */
+.diensten-header {
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+.diensten-rule {
+  display: block;
+  width: 32px;
+  height: 1.5px;
+  background: #c8a028;
+  margin-bottom: clamp(22px, 2.8vw, 36px);
+}
+
+.diensten-heading {
+  font-size: clamp(36px, 5.5vw, 88px);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: #f4f2ee;
+}
+
+.diensten-heading .accent {
+  color: #c8a028;
+}
+
+/* ── Bento Grid ── */
+.diensten-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.1fr 0.9fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "binnen buiten behangen"
+    "binnen stuc   behangen"
+    "klussen klussen klussen";
+  gap: 14px;
+}
+
+.diensten-tile {
+  overflow: hidden;
+  position: relative;
+  background: #111110;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.3s ease;
+}
+
+.diensten-tile:hover {
+  border-color: rgba(200, 160, 40, 0.25);
+}
+
+.tile-binnen   { grid-area: binnen; min-height: 520px; }
+.tile-buiten   { grid-area: buiten; min-height: 260px; }
+.tile-behangen { grid-area: behangen; }
+.tile-stuc     { grid-area: stuc; }
+.tile-klussen  { grid-area: klussen; }
+
+/* ── Image tiles ── */
+.tile-img-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.tile-img {
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+/* Gradient overlay on image tiles */
+.tile-binnen .tile-content,
+.tile-buiten .tile-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(20px, 2.5vw, 32px);
+  background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.5) 60%, transparent 100%);
+  z-index: 2;
+}
+
+/* ── Tile content ── */
+.tile-content {
+  padding: clamp(24px, 2.5vw, 32px);
+}
+
+.tile-content--full {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(24px, 2.5vw, 32px);
+}
+
+.tile-content--row {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(28px, 3vw, 40px) clamp(28px, 3vw, 48px);
+}
+
+.tile-glyph {
+  display: none; /* remove the placeholder glyph */
+}
+
+.tile-title {
+  font-size: clamp(16px, 1.4vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #f4f2ee;
+  margin: 0 0 0.45em;
+}
+
+.tile-desc {
+  font-size: clamp(12px, 0.95vw, 14px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(244, 242, 238, 0.55);
+  margin: 0;
+  max-width: 38ch;
+}
+
+/* Stucwerk and behangen also use image layout */
+.tile-stuc .tile-content,
+.tile-behangen .tile-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(20px, 2.5vw, 32px);
+  background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.5) 60%, transparent 100%);
+  z-index: 2;
+}
+
+/* Kleine klussen: cinematic wide tile */
+.tile-klussen {
+  background: #0d0d0b;
+  overflow: hidden;
+  min-height: 160px;
+}
+
+.klussen-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.klussen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.45;
+  filter: brightness(0.75) saturate(0.9);
+}
+
+.klussen-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10,10,10,0.85) 0%,
+    rgba(10,10,10,0.5) 50%,
+    rgba(10,10,10,0.75) 100%
+  );
+}
+
+
+.tile-klussen .tile-content--row {
+  position: relative;
+  z-index: 2;
+}
+
+.tile-cta {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0.7em 1.4em;
+  background: #c8a028;
+  color: #0a0a0a;
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.tile-cta:hover {
+  background: #dbb52e;
+  transform: translateY(-1px);
+}
+
+.tile-cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .diensten-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "binnen binnen"
+      "buiten behangen"
+      "stuc   stuc"
+      "klussen klussen";
+  }
+
+  .tile-binnen { min-height: 360px; }
+  .tile-buiten { min-height: 220px; }
+}
+
+@media (max-width: 600px) {
+  .diensten-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-template-areas:
+      "binnen"
+      "buiten"
+      "behangen"
+      "stuc"
+      "klussen";
+  }
+
+  .tile-binnen   { min-height: 280px; }
+  .tile-buiten   { min-height: 220px; }
+  .tile-behangen { min-height: 200px; }
+  .tile-stuc     { min-height: 200px; }
+  .tile-klussen  { min-height: 160px; }
+
+  .tile-content--row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: clamp(18px, 5vw, 28px);
+  }
+
+  .tile-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .diensten-heading {
+    font-size: clamp(32px, 9vw, 56px);
+  }
+}

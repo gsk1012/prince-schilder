@@ -1,0 +1,171 @@
+.site-footer {
+  background: #0a0a0a;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Main grid ── */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(88px, 12dvh, 140px) clamp(28px, 4vw, 64px) clamp(48px, 6dvh, 72px);
+}
+
+/* ── Brand column ── */
+.footer-logo {
+  display: inline-block;
+  font-size: clamp(14px, 1.05vw, 17px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f4f2ee;
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+}
+.footer-logo span {
+  color: #c8a028;
+}
+
+.footer-tagline {
+  font-size: clamp(12.5px, 0.9vw, 14px);
+  line-height: 1.82;
+  color: rgba(244, 242, 238, 0.36);
+  margin: 0;
+  max-width: 30ch;
+}
+
+/* ── Column label ── */
+.footer-col-label {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(200, 160, 40, 0.65);
+  margin-bottom: clamp(16px, 2vw, 22px);
+}
+
+/* ── Nav links ── */
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.2vw, 13px);
+}
+
+.footer-links a {
+  font-size: clamp(13px, 0.95vw, 15px);
+  font-weight: 400;
+  color: rgba(244, 242, 238, 0.48);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+.footer-links a:hover {
+  color: #f4f2ee;
+}
+
+/* ── Contact list ── */
+.footer-contact-list {
+  list-style: none;
+  margin: 0 0 clamp(20px, 2.5vw, 28px);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.2vw, 13px);
+}
+
+.footer-contact-list li {
+  font-size: clamp(13px, 0.95vw, 15px);
+  color: rgba(244, 242, 238, 0.48);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.footer-contact-list a {
+  color: rgba(244, 242, 238, 0.48);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-contact-list a:hover {
+  color: #f4f2ee;
+}
+
+/* ── CTA button ── */
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.58em 1.2em;
+  border: 1px solid rgba(200, 160, 40, 0.32);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(11.5px, 0.84vw, 13px);
+  font-weight: 600;
+  color: #c8a028;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+}
+.footer-cta:hover {
+  background: #c8a028;
+  border-color: #c8a028;
+  color: #0a0a0a;
+}
+
+/* ── Bottom strip ── */
+.footer-bottom {
+  border-top: 1px solid rgba(244, 242, 238, 0.06);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(14px, 1.8vw, 18px) clamp(28px, 4vw, 64px);
+}
+
+.footer-copy,
+.footer-kvk {
+  font-size: clamp(10.5px, 0.78vw, 12px);
+  color: rgba(244, 242, 238, 0.2);
+  letter-spacing: 0.025em;
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 540px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    padding-left: clamp(20px, 5vw, 32px);
+    padding-right: clamp(20px, 5vw, 32px);
+    padding-top: clamp(48px, 8dvh, 72px);
+    gap: clamp(28px, 6vw, 40px);
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  .footer-bottom-inner {
+    padding-left: clamp(20px, 5vw, 32px);
+    padding-right: clamp(20px, 5vw, 32px);
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
