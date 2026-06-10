@@ -10,7 +10,7 @@
 .proces-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: clamp(72px, 8dvh, 128px) clamp(28px, 4vw, 64px);
+  padding: clamp(72px, 8dvh, 128px) clamp(28px, 4vw, 64px) clamp(36px, 4dvh, 56px);
 }
 
 /* ── Header ── */
@@ -212,8 +212,7 @@
   }
 
   .pr-ghost {
-    font-size: clamp(44px, 16vw, 68px);
-    color: rgba(200, 160, 40, 0.045);
+    display: none;
   }
 
   .pr-title {

@@ -42,7 +42,7 @@ export default function Footer() {
             Prince <span>Schilder</span>
           </a>
           <p className="footer-tagline">
-            Schilder- en klusbedrijf in Amsterdam en omengeving.
+            Schilder- en klusbedrijf in Amsterdam en omgeving.
           </p>
         </motion.div>
 

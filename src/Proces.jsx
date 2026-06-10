@@ -51,7 +51,7 @@ export default function Proces() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="proces">
+    <section className="proces" id="hoe-het-werkt">
       <div className="proces-inner">
 
         <motion.div

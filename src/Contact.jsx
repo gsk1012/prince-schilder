@@ -17,14 +17,25 @@ export default function Contact() {
   const reduce = useReducedMotion();
   const [form, setForm] = useState({ naam: '', email: '', dienst: '', bericht: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   function handleChange(e) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    try {
+      const res = await fetch('https://formspree.io/f/xwvjqdrn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) setSubmitted(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -111,6 +122,21 @@ export default function Contact() {
                 </motion.span>
               ))}
             </motion.div>
+
+            {/* Testimonial */}
+            <motion.div
+              className="ct-testimonial"
+              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
+            >
+              <p className="ct-testi-quote">
+                "Gurdeep heeft onze woonkamer perfect geschilderd. Strak werk, op tijd opgeleverd en echt een vakman."
+              </p>
+              <span className="ct-testi-attr">Layla Bouabid, Amsterdam</span>
+            </motion.div>
+
           </div>
 
           {/* RIGHT: Form */}
@@ -137,7 +163,7 @@ export default function Contact() {
                       name="naam"
                       value={form.naam}
                       onChange={handleChange}
-                      placeholder="Jan de Vries"
+                      placeholder="Jouw naam"
                       required
                       autoComplete="name"
                     />
@@ -152,7 +178,7 @@ export default function Contact() {
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="jan@email.nl"
+                      placeholder="Jouw e-mailadres"
                       required
                       autoComplete="email"
                     />
@@ -185,17 +211,19 @@ export default function Contact() {
                       name="bericht"
                       value={form.bericht}
                       onChange={handleChange}
-                      placeholder="Beschrijf kort uw project, de ruimte en eventuele wensen..."
+                      placeholder="Vertel kort over je project, de ruimte en eventuele wensen..."
                       rows={5}
                     />
                   </div>
                 </div>
 
-                <button type="submit" className="ct-submit">
-                  Stuur aanvraag
-                  <svg className="ct-submit-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <button type="submit" className="ct-submit" disabled={sending}>
+                  {sending ? 'Versturen...' : 'Stuur aanvraag'}
+                  {!sending && (
+                    <svg className="ct-submit-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
                 </button>
               </form>
             ) : (

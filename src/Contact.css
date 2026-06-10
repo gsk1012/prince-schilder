@@ -206,6 +206,30 @@ a.ct-info-item:hover {
   flex-shrink: 0;
 }
 
+/* ── Testimonial ── */
+.ct-testimonial {
+  margin-top: clamp(28px, 3.5vw, 44px);
+  padding: clamp(16px, 1.8vw, 24px) clamp(18px, 2vw, 26px);
+  border-left: 2px solid rgba(200, 160, 40, 0.38);
+}
+
+.ct-testi-quote {
+  font-size: clamp(13px, 0.90vw, 14.5px);
+  line-height: 1.78;
+  color: rgba(244, 242, 238, 0.56);
+  font-style: italic;
+  margin: 0 0 clamp(8px, 1vw, 12px);
+}
+
+.ct-testi-attr {
+  font-size: clamp(10px, 0.70vw, 11.5px);
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(200, 160, 40, 0.62);
+}
+
+
 /* ── RIGHT: Form card ── */
 .ct-form-card {
   background: rgba(244, 242, 238, 0.025);

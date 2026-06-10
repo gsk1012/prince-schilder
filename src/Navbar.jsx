@@ -4,6 +4,7 @@ import './Navbar.css';
 
 const NAV_ITEMS = [
   { label: 'Diensten',      href: '#diensten' },
+  { label: 'Hoe het werkt', href: '#hoe-het-werkt' },
   { label: 'Werkzaamheden', href: '#werkzaamheden' },
   { label: 'Over ons',      href: '#over-ons' },
   { label: 'Contact',       href: '#contact' },
