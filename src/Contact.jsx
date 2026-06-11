@@ -47,17 +47,6 @@ export default function Contact() {
 
         {/* ── Full-width headline ── */}
         <div className="ct-head">
-          <motion.p
-            className="ct-head-meta"
-            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="ct-avail-dot" aria-hidden="true" />
-            Beschikbaar voor nieuwe opdrachten
-          </motion.p>
-
           <motion.h2
             className="ct-headline"
             initial={reduce ? { opacity: 0 } : { opacity: 0, x: -24 }}
