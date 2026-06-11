@@ -131,7 +131,6 @@
 .ct-left {
   display: flex;
   flex-direction: column;
-  padding-top: clamp(20px, 2.5vw, 36px);
 }
 
 .ct-tagline {
