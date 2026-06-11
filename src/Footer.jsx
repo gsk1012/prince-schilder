@@ -64,10 +64,10 @@ export default function Footer() {
           <span className="footer-col-label">Bereikbaar</span>
           <ul className="footer-contact-list">
             <li>
-              <a href="tel:+31600000000">+31 6 00 000 000</a>
+              <a href="tel:+31638138585">06 38 13 85 85</a>
             </li>
             <li>
-              <a href="mailto:info@princeschilder.nl">info@princeschilder.nl</a>
+              <a href="mailto:gsinghkaur1012@gmail.com">gsinghkaur1012@gmail.com</a>
             </li>
             <li>Amsterdam en omgeving</li>
           </ul>

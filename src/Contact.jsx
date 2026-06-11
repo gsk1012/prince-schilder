@@ -92,13 +92,13 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.5 }}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }}
             >
-              <motion.a href="tel:+31612345678" className="ct-info-item" variants={FADE}>
+              <motion.a href="tel:+31638138585" className="ct-info-item" variants={FADE}>
                 <span className="ct-info-label">Telefoon</span>
-                <span className="ct-info-value">06 12 34 56 78</span>
+                <span className="ct-info-value">06 38 13 85 85</span>
               </motion.a>
-              <motion.a href="mailto:info@princeschilder.nl" className="ct-info-item" variants={FADE}>
+              <motion.a href="mailto:gsinghkaur1012@gmail.com" className="ct-info-item" variants={FADE}>
                 <span className="ct-info-label">E-mail</span>
-                <span className="ct-info-value">info@princeschilder.nl</span>
+                <span className="ct-info-value">gsinghkaur1012@gmail.com</span>
               </motion.a>
               <motion.span className="ct-info-item" variants={FADE}>
                 <span className="ct-info-label">Werkgebied</span>
